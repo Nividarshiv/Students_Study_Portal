@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+{% block home %}active{% endblock home %}
+{% block body %}
+
+<div class="container mt-5">
+  <div class="row justify-content-evenly">
+    <div class="col-12 mb-3 bg-light">
+      <h3 class="mb-4 mt-5 text-center fw-bold fst-italic ">WELCOME</h3>
+      <hr style="border-color:aliceblue">
+    </div>
+    {% include 'message.html' %}
+    <div class="col-md-3 mb-5">
+      <a href="/notes" class="text-decoration-none text-dark">
+        <div class="card shadow-lg" style="width: 18rem;">
+          <img src="static\images\notes.jpg" class="card-img-top" alt="..." height="200px">
+          <div class="card-body text-center">
+            <h5 class="card-title my-2">Notes</h5>
+            <p class="card-text">Create notes to refer them later.They are stored permantely until deleted.</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-3 mb-5">
+      <a href="/homework" class="text-decoration-none text-dark">
+        <div class="card shadow-lg" style="width: 18rem;">
+          <img src="static\images\homework.jpeg" class="card-img-top" alt="..." height="200px">
+          <div class="card-body text-center">
+            <h5 class="card-title my-2">Homework</h5>
+            <p class="card-text">Add homework and assign them deadlines.Display prioritised by deadline.</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-3 mb-5">
+      <a href="/youtube" class="text-decoration-none text-dark">
+        <div class="card shadow-lg" style="width: 18rem;">
+          <img src="static\images\youtube.jpg" class="card-img-top" alt="..." height="200px">
+          <div class="card-body text-center">
+            <h5 class="card-title my-2">Youtube</h5>
+            <p class="card-text">Search Youtube and select your desired video to play it on youtube.</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-3 mb-5">
+      <a href="/todo" class="text-decoration-none text-dark">
+        <div class="card shadow-lg" style="width: 18rem;">
+          <img src="static\images\todo.jpeg" class="card-img-top" alt="..." height="200px">
+          <div class="card-body text-center">
+            <h5 class="card-title my-2">To Do</h5>
+            <p class="card-text">Add your to-do lists for your day and remove them as you finish.</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-3 mb-5">
+      <a href="/books" class="text-decoration-none text-dark">
+        <div class="card shadow-lg" style="width: 18rem;">
+          <img src="static\images\books.jpg" class="card-img-top" alt="..." height="200px">
+          <div class="card-body text-center">
+            <h5 class="card-title my-2">Books</h5>
+            <p class="card-text">Browse books from list of neatly organized book menu.</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-3 mb-5">
+      <a href="/dictionary" class="text-decoration-none text-dark">
+        <div class="card shadow-lg" style="width: 18rem;">
+          <img src="static\images\dictionary.jpg" class="card-img-top" alt="..." height="200px">
+          <div class="card-body text-center">
+            <h5 class="card-title my-2">Dictionary</h5>
+            <p class="card-text">A vocabulary from a book is troubling you? No problem, enter the word, and the meaning
+              will be displayed
+              almost instantaneously.</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-3 mb-5">
+      <a href="/wiki" class="text-decoration-none text-dark">
+        <div class="card shadow-lg" style="width: 18rem;">
+          <img src="static\images\wikipedia.jpg" class="card-img-top" alt="..." height="200px">
+          <div class="card-body text-center">
+            <h5 class="card-title my-2">wikipedia</h5>
+            <p class="card-text">Homework and Assignments? Search wikipedia to get fast results.</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-3 mb-5">
+      <a href="/calculation" class="text-decoration-none text-dark">
+        <div class="card shadow-lg" style="width: 18rem;">
+          <img src="static\images\cal.jpg" class="card-img-top" alt="..." height="200px">
+          <div class="card-body text-center">
+            <h5 class="card-title my-2">Calculation</h5>
+            <p class="card-text">Makes your calculation in simple and easy way.</p>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    {% endblock body %}

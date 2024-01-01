@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block body %}
+
+
+<section class='text-center container' style="margin-top: 75px;">
+  <div class="col-12 mb-5 bg-light">
+    <h3 class="mb-2 mt-4 text-center fw-bold fst-italic ">SEARCH ARTICLE IN WIKIPEDIA</h3>
+    <p class="text-center ">Just enter the search query to obtain the results</p>
+    <hr style="border-color:aliceblue">
+  </div>
+  <form action="/wiki" method="post" class="row g-3 justify-content-center">
+    {% csrf_token %}
+    <div class="col-auto">
+      <label class="h5">Enter text: </label>
+    </div>
+    <div class="col-auto">
+      <input type="text" class="form-control" name="text">
+    </div>
+    <div class="col-auto">
+      <button type="submit" class="btn btn-danger mb-3">Search</button>
+    </div>
+  </form>
+  <div class="container bg-light">
+    <div class="content-section p-0 mt-5">
+      <a href="{{link}}" class="p-0 m-3 text-decoration-none text-dark" target="_blank">
+        <div class="custom-header">
+          <h2>{{title}}</h2>
+          <h6>{{link}}</h6>
+        </div>
+      </a>
+      <hr class="p-0 m-0">
+      <p class="description m-3 p-5">
+        {{details}}
+      </p>
+      <hr>
+    </div>
+  </div>
+</section>
+{% endblock body %}

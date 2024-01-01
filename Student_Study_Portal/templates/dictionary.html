@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<section class='text-center container' style="margin-top: 75PX;">
+
+  <div class="col-12 mb-5 bg-light">
+    <h3 class="mb-2 mt-4 text-center fw-bold fst-italic ">STUDENT DICTIONARY</h3>
+    <p class="text-center ">Enter any word to get Meaning</p>
+    <hr style="border-color:aliceblue">
+  </div>
+
+  <form action="/dictionary" method="post" class="row g-3 justify-content-center">
+    {% csrf_token %}
+    <div class="col-auto">
+      <label class="h5">Enter word: </label>
+    </div>
+    <div class="col-auto">
+      <input type="text" class="form-control" id="searchword" name="searchtext">
+    </div>
+    <div class="col-auto">
+      <button type="submit" class="btn btn-danger mb-3">Search</button>
+    </div>
+  </form>
+  <div class="content-section p-0 mt-5 bg-light">
+    {% if input %}
+    <div class="custom-header">
+      <h2>{{input}}</h2>
+    </div>
+    <hr class="p-0 m-0">
+    <p class="float-left">
+    <h4 class="text-start my-3" style="padding-left: 75px;">Definition:</h4>
+    <h6>
+      {% if definition %}
+      <ul class="list-group list-group-numbered">
+        {% for definition in definition %}
+        <li class="list-group-item text-start mx-5" style="padding-left: 75px;"> {{definition}}</li>
+        {% endfor %}
+      </ul>
+      {% else %}
+      <h2>Sorry, API request limit exceeded</h2>
+      {% endif %}
+    </h6>
+    </p>
+    <hr>
+  </div>
+  {% else %}
+  <h3>Enter word to search</h3>
+  {% endif %}
+</section>
+
+{% endblock body %}

@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<div class="container" style="margin-top: 85px;"">
+    <div class=" col-12 mb-5 bg-light">
+    <h3 class="mb-2 mt-4 text-center fw-bold fst-italic ">TO DO LISTS</h3>
+    <hr style="border-color:aliceblue">
+</div>
+{% if not tododone %}
+<table class="table table-striped table-bordered table-hover table-dark">
+    <thead>
+        <tr>
+            <th scope="col">S.No</th>
+            <th scope="col">Title</th>
+            <th scope="col">Status</th>
+            <th scope="col">Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for todo in todos %}
+        <tr>
+            <th scope="row">{{forloop.counter}}</th>
+            <td>{{todo.title}}</td>
+            <td>
+                <a href="updatetodo/{{todo.id}}">
+
+                    <div class="form-check">
+                        {% if todo.isfinished == True%}
+                        <input class="form-check-input" type="checkbox" checked>
+                        <label class="form-check-label text-light">
+                            Completed
+                        </label>
+                        {% else %}
+                        <input class="form-check-input" type="checkbox">
+                        <label class="form-check-label text-light">
+                            Do as Completed
+                        </label>
+                        {% endif %}
+                    </div>
+                </a>
+            </td>
+            <td><a href="deletetodo/{{todo.id}}"><i class="fa fa-trash fa-2x"></i></a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<h4>All tasks have been done!! create to add more</h4>
+{% endif %}
+</div>
+
+<div class=" container mt-3">
+    <div class="col-12 mb-5 bg-light">
+        <h3 class="mb-3 mt-5 text-center fw-bold fst-italic ">CREATE TO_DO</h3>
+        <hr style="border-color:aliceblue">
+    </div>
+    <form action="/todo" method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label h5">Title</label>
+            <input class="form-control" type="text" name="title" aria-label="default input example">
+        </div>
+        <div class="form-check m-3 mt-4">
+            <input class="form-check-input" type="checkbox" value="1" name="todocheck" id="flexCheckDefault">
+            <label class="form-check-label h5" for="flexCheckDefault ">
+                Is finished
+            </label>
+        </div>
+        <button type="submit" class="btn btn-outline-secondary  m-3">Create</button>
+    </form>
+</div>
+
+{% endblock body %}

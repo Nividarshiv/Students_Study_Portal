@@ -1,0 +1,62 @@
+#second{
+    margin-top: 20px;
+    
+}
+#second .middle{
+    border: 2px solid lightgray;
+}
+
+#second .middle .result{
+    height: 60px;
+    width: 80%;
+    margin: 5% 10%;
+}
+
+#second .middle .result input{
+    width: 100%;
+    height: 100%;
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+    border-radius: 10px;
+    text-align: right;
+    padding-right: 12px;
+}
+
+#second .middle .result input:focus{
+    border-radius: 10px;
+}
+#second .middle .keypad{
+    margin: 20px 15%;
+    margin-bottom: 5%;
+}
+#ques{
+    float: right;
+}
+#second .middle .keypad .spc_btn{
+    margin: 5px 5px;
+    background-color: #afc3e9;
+    font-weight: bold;
+    width: 75px;
+}
+#second .middle .keypad .num_btn{
+    margin: 5px 5px;
+    background-color: #d5dbdd;
+    border-radius: 4px;
+    text-align: center;
+    width: 75px;
+    padding-top: 8px;
+}
+#second .middle .keypad .equal_btn{
+    margin: 5px 10px;
+    border-radius: 4px;
+    font-weight: bold;
+    width: 75px;
+    padding-top: 8px;
+}
+#second .middle .keypad .spc_btn:hover{
+    background-color: #d7d9dd;
+}
+#second .middle .keypad .num_btn:hover{
+    background-color: #e8eaeb;
+}
+

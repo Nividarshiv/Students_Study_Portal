@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<div class="container" style="margin-top: 75px;">
+    <section class='text-center container mt-5'>
+        <div class="content-section mt-5">
+
+            <div class="mt-5 bg-light">
+                <h4 class=" text-center fw-bold fst-italic p-1 pt-2">{{note.title}}</h4>
+                <hr style="border-color:aliceblue">
+            </div>
+            <p class="description m-5 p-5">
+                {{note.description}}
+            </p>
+            <hr>
+        </div>
+    </section>
+    <a href="/notes"><button type="button" class="btn btn-outline-secondary mt-3">Notes lList</button></a>
+</div>
+
+{% endblock body %}

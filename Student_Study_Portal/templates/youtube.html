@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<section class='container' style="margin-top: 100px;">
+    <div class="col-12 mb-5 bg-light">
+        <h3 class="mb-2 mt-4 text-center fw-bold fst-italic ">SEARCH VIDEOS IN YOUTUBE</h3>
+        <p class="text-center ">search videos and select any video to open in youtube</p>
+        <hr style="border-color:aliceblue">
+    </div>
+    <form action="youtube" method="post" class="row g-3 justify-content-center">
+        {% csrf_token %}
+        <div class="col-auto">
+            <label class="h5">Enter text to search </label>
+        </div>
+        <div class="col-auto">
+            <input type="text" class="form-control" id="searchyoutube" name="search">
+        </div>
+        <div class="col-auto">
+            <button type="submit" class="btn btn-danger mb-3">Search</button>
+        </div>
+    </form>
+    <br>
+    {% for result in results %}
+    <a href="{{result.link}}" target="_blank" class="text-decoration-none text-dark">
+        <div class="card">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-md-5">
+                        <img class="img-fluid" src="{{result.thumbnails}}" alt="">
+                    </div>
+                    <div class="col-md-7">
+                        <h3 class="p-0 m-0 text-center">{{result.title}}</h3>
+                        <b>
+                            <u>
+                                <h5 class="p-0 m-0 text-center">{{result.channel}}</h5>
+                            </u>
+                        </b>
+                        <h6 class="p-0 m-1 text-center">{{result.description}}</h6>
+                        <b>
+                            <h6 class="ml-0 mt-3">{{result.duration}}</h6>
+                            <h6 class="ml-0 mt-1">{{result.views}}</h6>
+                            <h6 class="ml-0 mt-1">{{result.published}}</h6>
+                        </b>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+    {% endfor %}
+    <br>
+</section>
+
+{% endblock body %}
